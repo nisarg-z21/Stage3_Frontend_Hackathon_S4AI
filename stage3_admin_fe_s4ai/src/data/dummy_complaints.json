@@ -1,0 +1,802 @@
+[
+  {
+    "complainId": "C20240314001",
+    "mobileNo": "3137813187",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["ransomware_alert.png", "whatsapp_screenshot.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Voyeurism"
+  },
+  {
+    "complainId": "C20240314002",
+    "mobileNo": "1919692813",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Financial Crimes",
+    "subcategory": "Online Shopping/E-commerce Frauds"
+  },
+  {
+    "complainId": "C20240314003",
+    "mobileNo": "6091119919",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314004",
+    "mobileNo": "4608296561",
+    "description": "My WhatsApp account was hacked, and the hacker started sending obscene messages to my contacts.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314005",
+    "mobileNo": "1523763097",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Financial Crimes",
+    "subcategory": "Online Job Fraud"
+  },
+  {
+    "complainId": "C20240314006",
+    "mobileNo": "6600808337",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["telegram_screenshot.png"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Business Email Compromise/Email Takeover"
+  },
+  {
+    "complainId": "C20240314007",
+    "mobileNo": "1290183506",
+    "description": "My child was being cyberbullied through a fake Instagram account, receiving threatening messages daily.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Financial Crimes",
+    "subcategory": "Cheating by Impersonation (other than Government Servant)"
+  },
+  {
+    "complainId": "C20240314008",
+    "mobileNo": "8162828625",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Financial Crimes",
+    "subcategory": "Real Estate/ Rental Payment"
+  },
+  {
+    "complainId": "C20240314009",
+    "mobileNo": "0014225283",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Tampering with computer source documents"
+  },
+  {
+    "complainId": "C20240314010",
+    "mobileNo": "8467542916",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Malware Attack"
+  },
+  {
+    "complainId": "C20240314011",
+    "mobileNo": "2349640997",
+    "description": "My child was being cyberbullied through a fake Instagram account, receiving threatening messages daily.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314012",
+    "mobileNo": "2059691288",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Provocative Speech for unlawful acts"
+  },
+  {
+    "complainId": "C20240314013",
+    "mobileNo": "1095803533",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Data Breach/Theft"
+  },
+  {
+    "complainId": "C20240314014",
+    "mobileNo": "9877557636",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Stalking"
+  },
+  {
+    "complainId": "C20240314015",
+    "mobileNo": "2524451852",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["telegram_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Sexual Harassment"
+  },
+  {
+    "complainId": "C20240314016",
+    "mobileNo": "8080556971",
+    "description": "My child was being cyberbullied through a fake Instagram account, receiving threatening messages daily.",
+    "uploadedFiles": ["telegram_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314017",
+    "mobileNo": "7250173564",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "SQL Injection"
+  },
+  {
+    "complainId": "C20240314018",
+    "mobileNo": "3939159123",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Data Breach/Theft"
+  },
+  {
+    "complainId": "C20240314019",
+    "mobileNo": "4055421449",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "SQL Injection"
+  },
+  {
+    "complainId": "C20240314020",
+    "mobileNo": "5887037348",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314021",
+    "mobileNo": "4468258591",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["email_fraud.pdf"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Online Human Trafficking"
+  },
+  {
+    "complainId": "C20240314022",
+    "mobileNo": "6809285717",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Sending obscene material"
+  },
+  {
+    "complainId": "C20240314023",
+    "mobileNo": "1831610008",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Sending obscene material"
+  },
+  {
+    "complainId": "C20240314024",
+    "mobileNo": "3918391751",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Business Email Compromise/Email Takeover"
+  },
+  {
+    "complainId": "C20240314025",
+    "mobileNo": "8479515071",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Financial Crimes",
+    "subcategory": "Cheating by Impersonation (other than Government Servant)"
+  },
+  {
+    "complainId": "C20240314026",
+    "mobileNo": "2715010597",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["telegram_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Bullying"
+  },
+  {
+    "complainId": "C20240314027",
+    "mobileNo": "6977724647",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Data Breach/Theft"
+  },
+  {
+    "complainId": "C20240314028",
+    "mobileNo": "2780259945",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Hacking/Defacement"
+  },
+  {
+    "complainId": "C20240314029",
+    "mobileNo": "8857311971",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Sexual Harassment"
+  },
+  {
+    "complainId": "C20240314030",
+    "mobileNo": "3943890754",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Cyber Pornography"
+  },
+  {
+    "complainId": "C20240314031",
+    "mobileNo": "0391403555",
+    "description": "A fake social media profile was created using my photos and inappropriate content was shared to defame me.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Cyber Enabled Human Trafficking / Cyber Slavery"
+  },
+  {
+    "complainId": "C20240314032",
+    "mobileNo": "8793253194",
+    "description": "My WhatsApp account was hacked, and the hacker started sending obscene messages to my contacts.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Phishing"
+  },
+  {
+    "complainId": "C20240314033",
+    "mobileNo": "9296660424",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Financial Crimes",
+    "subcategory": "Online Shopping/E-commerce Frauds"
+  },
+  {
+    "complainId": "C20240314034",
+    "mobileNo": "5861577726",
+    "description": "My child was being cyberbullied through a fake Instagram account, receiving threatening messages daily.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Financial Crimes",
+    "subcategory": "Online Job Fraud"
+  },
+  {
+    "complainId": "C20240314035",
+    "mobileNo": "3640030589",
+    "description": "A fake social media profile was created using my photos and inappropriate content was shared to defame me.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314036",
+    "mobileNo": "0074982591",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Cyber Pornography"
+  },
+  {
+    "complainId": "C20240314037",
+    "mobileNo": "2518920461",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Phishing"
+  },
+  {
+    "complainId": "C20240314038",
+    "mobileNo": "8351565476",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Data Breach/Theft"
+  },
+  {
+    "complainId": "C20240314039",
+    "mobileNo": "4943952724",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["email_fraud.pdf"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Malware Attack"
+  },
+  {
+    "complainId": "C20240314040",
+    "mobileNo": "4854524234",
+    "description": "My WhatsApp account was hacked, and the hacker started sending obscene messages to my contacts.",
+    "uploadedFiles": ["telegram_screenshot.png"],
+    "category": "Financial Crimes",
+    "subcategory": "Investment Scam/Trading Scam"
+  },
+  {
+    "complainId": "C20240314041",
+    "mobileNo": "1240587131",
+    "description": "A fake social media profile was created using my photos and inappropriate content was shared to defame me.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314042",
+    "mobileNo": "6118714948",
+    "description": "A fake social media profile was created using my photos and inappropriate content was shared to defame me.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314043",
+    "mobileNo": "9337204632",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314044",
+    "mobileNo": "8816277858",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Online Gambling / Betting Frauds"
+  },
+  {
+    "complainId": "C20240314045",
+    "mobileNo": "1302158920",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Financial Crimes",
+    "subcategory": "Impersonation of Govt. Servant"
+  },
+  {
+    "complainId": "C20240314046",
+    "mobileNo": "6885700743",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Financial Crimes",
+    "subcategory": "Online Loan Fraud"
+  },
+  {
+    "complainId": "C20240314047",
+    "mobileNo": "5499683552",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Data Breach/Theft"
+  },
+  {
+    "complainId": "C20240314048",
+    "mobileNo": "6743804128",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["email_fraud.pdf"],
+    "category": "Financial Crimes",
+    "subcategory": "Phishing"
+  },
+  {
+    "complainId": "C20240314049",
+    "mobileNo": "9362420239",
+    "description": "My WhatsApp account was hacked, and the hacker started sending obscene messages to my contacts.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Data Breach/Theft"
+  },
+  {
+    "complainId": "C20240314050",
+    "mobileNo": "4352848019",
+    "description": "My child was being cyberbullied through a fake Instagram account, receiving threatening messages daily.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Tampering with computer source documents"
+  },
+  {
+    "complainId": "C20240314051",
+    "mobileNo": "8728898592",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["email_fraud.pdf"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Publishing and transmitting obscene material/sexually explicit material"
+  },
+  {
+    "complainId": "C20240314052",
+    "mobileNo": "6111109701",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Tampering with computer source documents"
+  },
+  {
+    "complainId": "C20240314053",
+    "mobileNo": "5285050227",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Voyeurism"
+  },
+  {
+    "complainId": "C20240314054",
+    "mobileNo": "6205230694",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["hacked_instagram.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Rape/ Gang Rape"
+  },
+  {
+    "complainId": "C20240314055",
+    "mobileNo": "4345032344",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["email_fraud.pdf"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Defamation"
+  },
+  {
+    "complainId": "C20240314056",
+    "mobileNo": "6741500166",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Malware Attack"
+  },
+  {
+    "complainId": "C20240314057",
+    "mobileNo": "8555981867",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Financial Crimes",
+    "subcategory": "Courier/Parcel Scam"
+  },
+  {
+    "complainId": "C20240314058",
+    "mobileNo": "4874737168",
+    "description": "My WhatsApp account was hacked, and the hacker started sending obscene messages to my contacts.",
+    "uploadedFiles": ["hacked_instagram.jpg"],
+    "category": "Financial Crimes",
+    "subcategory": "SIM Swap Fraud"
+  },
+  {
+    "complainId": "C20240314059",
+    "mobileNo": "3664058369",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["hacked_instagram.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314060",
+    "mobileNo": "3606703887",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Financial Crimes",
+    "subcategory": "Advance Fee"
+  },
+  {
+    "complainId": "C20240314061",
+    "mobileNo": "0592241745",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314062",
+    "mobileNo": "6846916998",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["hacked_instagram.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314063",
+    "mobileNo": "6964849213",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Defamation"
+  },
+  {
+    "complainId": "C20240314064",
+    "mobileNo": "1449080500",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["telegram_screenshot.png"],
+    "category": "Financial Crimes",
+    "subcategory": "Impersonation of Govt. Servant"
+  },
+  {
+    "complainId": "C20240314065",
+    "mobileNo": "2929872195",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Financial Crimes",
+    "subcategory": "Courier/Parcel Scam"
+  },
+  {
+    "complainId": "C20240314066",
+    "mobileNo": "0946861669",
+    "description": "My WhatsApp account was hacked, and the hacker started sending obscene messages to my contacts.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Tampering with computer source documents"
+  },
+  {
+    "complainId": "C20240314067",
+    "mobileNo": "6702329156",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "SQL Injection"
+  },
+  {
+    "complainId": "C20240314068",
+    "mobileNo": "1296935489",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Bullying"
+  },
+  {
+    "complainId": "C20240314069",
+    "mobileNo": "8050445204",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Online Human Trafficking"
+  },
+  {
+    "complainId": "C20240314070",
+    "mobileNo": "2293445350",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Social Media Account Hacking"
+  },
+  {
+    "complainId": "C20240314071",
+    "mobileNo": "5914119041",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Cyber Pornography"
+  },
+  {
+    "complainId": "C20240314072",
+    "mobileNo": "7087851784",
+    "description": "My child was being cyberbullied through a fake Instagram account, receiving threatening messages daily.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Defamation"
+  },
+  {
+    "complainId": "C20240314073",
+    "mobileNo": "2896649282",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Financial Crimes",
+    "subcategory": "Online Shopping/E-commerce Frauds"
+  },
+  {
+    "complainId": "C20240314074",
+    "mobileNo": "8385399568",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Sexual Harassment"
+  },
+  {
+    "complainId": "C20240314075",
+    "mobileNo": "2292568405",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Intellectual Property (IPR) Thefts"
+  },
+  {
+    "complainId": "C20240314076",
+    "mobileNo": "4688347132",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["hacked_instagram.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Tampering with computer source documents"
+  },
+  {
+    "complainId": "C20240314077",
+    "mobileNo": "1658932320",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Sending obscene material"
+  },
+  {
+    "complainId": "C20240314078",
+    "mobileNo": "6897273419",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Malware Attack"
+  },
+  {
+    "complainId": "C20240314079",
+    "mobileNo": "3385005269",
+    "description": "My child was being cyberbullied through a fake Instagram account, receiving threatening messages daily.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Financial Crimes",
+    "subcategory": "Identity Theft"
+  },
+  {
+    "complainId": "C20240314080",
+    "mobileNo": "7579398683",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Financial Crimes",
+    "subcategory": "Online Shopping/E-commerce Frauds"
+  },
+  {
+    "complainId": "C20240314081",
+    "mobileNo": "5355842255",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Financial Crimes",
+    "subcategory": "Phishing"
+  },
+  {
+    "complainId": "C20240314082",
+    "mobileNo": "6496160085",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["hacked_instagram.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314083",
+    "mobileNo": "8063262947",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Publishing and transmitting obscene material/sexually explicit material"
+  },
+  {
+    "complainId": "C20240314084",
+    "mobileNo": "5768939617",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Financial Crimes",
+    "subcategory": "Investment Scam/Trading Scam"
+  },
+  {
+    "complainId": "C20240314085",
+    "mobileNo": "2965299420",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Ransomware Attack"
+  },
+  {
+    "complainId": "C20240314086",
+    "mobileNo": "4469489482",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Child Pornography/Child Sexual Abuse Material (CSAM)"
+  },
+  {
+    "complainId": "C20240314087",
+    "mobileNo": "2206857490",
+    "description": "A fake social media profile was created using my photos and inappropriate content was shared to defame me.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Malware Attack"
+  },
+  {
+    "complainId": "C20240314088",
+    "mobileNo": "3780946100",
+    "description": "A fake social media profile was created using my photos and inappropriate content was shared to defame me.",
+    "uploadedFiles": ["instagram_chat_screenshot.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Data Breach/Theft"
+  },
+  {
+    "complainId": "C20240314089",
+    "mobileNo": "1903859723",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["email_fraud.pdf"],
+    "category": "Financial Crimes",
+    "subcategory": "Investment Scam/Trading Scam"
+  },
+  {
+    "complainId": "C20240314090",
+    "mobileNo": "0948923897",
+    "description": "A fraudster called me, claiming to be from a tech support company, and tricked me into installing malware on my computer.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Hacking/Defacement"
+  },
+  {
+    "complainId": "C20240314091",
+    "mobileNo": "6872925213",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Malware Attack"
+  },
+  {
+    "complainId": "C20240314092",
+    "mobileNo": "5283575889",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["email_fraud.pdf"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Social Media Account Hacking"
+  },
+  {
+    "complainId": "C20240314093",
+    "mobileNo": "7875148031",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["telegram_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Bullying"
+  },
+  {
+    "complainId": "C20240314094",
+    "mobileNo": "9687736438",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314095",
+    "mobileNo": "2940374277",
+    "description": "Someone hacked my Instagram account and started posting offensive content under my name.",
+    "uploadedFiles": ["ransomware_alert.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Cyber Blackmailing & Threatening"
+  },
+  {
+    "complainId": "C20240314096",
+    "mobileNo": "1289680580",
+    "description": "I was blackmailed through a nude video call that was recorded without my consent.",
+    "uploadedFiles": ["blackmail_screenshot.png"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Sexual Harassment"
+  },
+  {
+    "complainId": "C20240314097",
+    "mobileNo": "6335137662",
+    "description": "I was lured into an investment scam promising 100% returns, and I lost a significant amount of money.",
+    "uploadedFiles": ["scam_call_recording.mp3"],
+    "category": "Financial Crimes",
+    "subcategory": "Identity Theft"
+  },
+  {
+    "complainId": "C20240314098",
+    "mobileNo": "1344713404",
+    "description": "A hacker gained access to my business email and initiated fraudulent transactions in my name.",
+    "uploadedFiles": ["facebook_fake_profile.jpg"],
+    "category": "Cyber Attack/Dependent Crimes",
+    "subcategory": "Tampering with computer source documents"
+  },
+  {
+    "complainId": "C20240314099",
+    "mobileNo": "9086906272",
+    "description": "I received a call from someone pretending to be a government officer and was asked to share my bank details.",
+    "uploadedFiles": ["investment_fraud.pdf"],
+    "category": "Other Cyber Crime",
+    "subcategory": "Defamation"
+  },
+  {
+    "complainId": "C20240314100",
+    "mobileNo": "9346893037",
+    "description": "A ransomware attack encrypted all the data on my company\u2019s server, demanding a large payment in cryptocurrency.",
+    "uploadedFiles": ["whatsapp_screenshot.jpg"],
+    "category": "Crime Against Women & Children",
+    "subcategory": "Rape/ Gang Rape"
+  }
+]
