@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Button, Card, TextField, Typography } from "@mui/material";
 
 const VerifyOtp = () => {
-  const { mobile } = useParams();
+  const { mobileNo } = useParams();
   const navigate = useNavigate();
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
@@ -18,7 +18,7 @@ const VerifyOtp = () => {
     }
 
     try {
-      // const response = await useAxios.post("/users/verify-otp", { mobile, otp });
+      // const response = await useAxios.post("/users/verify-otp", { mobileNo, otp });
       // const { success, message } = response.data;
 
       // if (success) {
@@ -27,7 +27,8 @@ const VerifyOtp = () => {
       //   setError(message);
       // }
 
-      console.log("OTP verified for", mobile);
+      console.log("OTP verified for", mobileNo);
+      localStorage.setItem("mobileNo", mobileNo);
       navigate("/complaintForm");
     } catch (err) {
       console.error("OTP verification error:", err);
@@ -57,7 +58,7 @@ const VerifyOtp = () => {
         variant="body1"
         sx={{ mb: 1, color: "black", textAlign: "left" }}
       >
-        OTP sent to <strong>{mobile}</strong>
+        OTP sent to <strong>{mobileNo}</strong>
       </Typography>
       <form onSubmit={handleVerifyOtp}>
         <TextField

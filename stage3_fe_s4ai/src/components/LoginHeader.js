@@ -4,17 +4,25 @@ import {
   Toolbar,
   Box,
   Typography,
+  Button,
   IconButton,
   Menu,
   MenuItem,
-  Divider,
 } from "@mui/material";
-import { Facebook, Instagram, LinkedIn } from "@mui/icons-material";
-import TranslateIcon from "@mui/icons-material/Translate";
+import {
+  Facebook,
+  Instagram,
+  LinkedIn,
+  Logout,
+  Translate as TranslateIcon,
+} from "@mui/icons-material";
+import { useLocation, useNavigate } from "react-router-dom";
 const emblem = require("../assets/emblem-dark.png");
 const i4c = require("../assets/i4cpng.png");
 
 const Header = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
 
   // Handle language menu open/close
@@ -25,11 +33,18 @@ const Header = () => {
     setAnchorEl(null);
   };
 
+  const handleLogout = () => {
+    sessionStorage.clear(); // Clear session on logout
+    localStorage.clear();
+    navigate("/signin"); // Redirect to Sign-In page
+  };
+
   return (
     <AppBar
       position="static"
       sx={{ backgroundColor: "#0361ae", color: "white" }}
     >
+      {/* Top Toolbar - Government & Cyber Crime Logos */}
       <Toolbar
         sx={{
           display: "flex",
@@ -38,7 +53,6 @@ const Header = () => {
           p: 1,
         }}
       >
-        {/* Left Section - Government & Cyber Crime Logos */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <Box>
             <Typography variant="h6" sx={{ fontWeight: "bold" }}>
@@ -50,7 +64,7 @@ const Header = () => {
           </Box>
         </Box>
 
-        {/* Right Section - Language & Social Media Icons */}
+        {/* Language & Social Media Icons */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           {/* Language Dropdown */}
           <IconButton color="inherit" onClick={handleMenuOpen}>
@@ -64,8 +78,6 @@ const Header = () => {
             <MenuItem onClick={handleMenuClose}>English</MenuItem>
             <MenuItem onClick={handleMenuClose}>हिंदी</MenuItem>
           </Menu>
-
-          {/* Social Media Icons */}
           <IconButton color="inherit">
             <Facebook />
           </IconButton>
@@ -78,27 +90,21 @@ const Header = () => {
         </Box>
       </Toolbar>
 
-      {/* Divider Line */}
-      <Divider sx={{ backgroundColor: "white", opacity: 0.5 }} />
-
-      {/* Main Header */}
+      {/* Main Header - Portal Title */}
       <Toolbar
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           p: 1,
-          backgroundColor: "white", // Set background color to white
+          backgroundColor: "white",
           gap: 4,
         }}
       >
-        {/* Left Section - Government & Cyber Crime Logos */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <img src={emblem} alt="Gov Logo" style={{ height: 50 }} />
           <img src={i4c} alt="I4C Logo" style={{ height: 50 }} />
         </Box>
-
-        {/* Center - Portal Title */}
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="h5" sx={{ fontWeight: "bold", color: "black" }}>
             राष्ट्रीय साइबर अपराध रिपोर्टिंग पोर्टल
@@ -108,6 +114,61 @@ const Header = () => {
           </Typography>
         </Box>
       </Toolbar>
+
+      {/* Show Third Toolbar Only If NOT on /signin and path does not match /verifyOtp/{params} */}
+      {location.pathname !== "/signin" && !location.pathname.startsWith("/verifyOtp") && (
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "center",
+            minHeight: "36px !important",
+            height: "36px",
+            p: 0,
+            gap: 1,
+          }}
+        >
+          <Button
+            sx={{
+              fontWeight: "bold",
+              color: "black",
+              fontSize: "0.75rem",
+              minWidth: "auto",
+              padding: "2px 6px",
+            }}
+          >
+            Logs
+          </Button>
+          <Button
+            sx={{
+              fontWeight: "bold",
+              color: "black",
+              fontSize: "0.75rem",
+              minWidth: "auto",
+              padding: "2px 6px",
+            }}
+          >
+            Errors
+          </Button>
+          <Button
+            sx={{
+              fontWeight: "bold",
+              color: "black",
+              fontSize: "0.75rem",
+              minWidth: "auto",
+              padding: "2px 6px",
+            }}
+          >
+            Reports
+          </Button>
+          <IconButton
+            onClick={handleLogout}
+            sx={{ color: "black", padding: "4px" }}
+          >
+            <Logout />
+          </IconButton>
+        </Toolbar>
+      )}
     </AppBar>
   );
 };

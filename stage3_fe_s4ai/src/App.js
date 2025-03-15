@@ -27,7 +27,7 @@ function App() {
                   <LoginHeader />
                   <Routes>
                     <Route path="/signin" element={<SignIn />} />
-                    <Route path="/verifyOtp/:mobile" element={<VerifyOtp />} />
+                    <Route path="/verifyOtp/:mobileNo" element={<VerifyOtp />} />
                     <Route path="/complaintForm" element={<ComplaintForm />} />
                   </Routes>
                 </div>

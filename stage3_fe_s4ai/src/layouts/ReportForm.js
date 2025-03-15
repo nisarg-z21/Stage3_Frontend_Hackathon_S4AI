@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import useAxios from "../api/useAxios";
 import {
   Button,
   Card,
@@ -24,6 +25,8 @@ const ComplaintForm = () => {
   const [showCategory, setShowCategory] = useState(false);
   const mediaRecorderRef = useRef(null);
   const audioChunks = useRef([]);
+  const [pincode, setPincode] = useState("");
+  const [state, setState] = useState("");
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
@@ -74,32 +77,78 @@ const ComplaintForm = () => {
     setAudioBlob(null);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!description.trim()) {
       setError("Please describe your complaint.");
       return;
     }
     setError("");
-    console.log("Complaint submitted with description:", description);
-    console.log("Uploaded files:", files);
+
+    const formData = new FormData();
+    formData.append("description", description);
+    formData.append("category", category);
+    formData.append("subcategory", subcategory);
+    formData.append("pincode", pincode);
+    formData.append("state", state);
+    const mobileNo = localStorage.getItem("mobileNo");
+    formData.append("mobileNo", mobileNo);
+
+    // Append uploaded files
+    files.forEach((file) => {
+      formData.append("uploadedFiles", file);
+    });
+
+    // Append audio file if exists
     if (audioBlob) {
-      console.log("Audio file:", audioBlob);
+      formData.append("audioFile", audioBlob, "recording.wav");
+    }
+
+    try {
+      const response = await useAxios.post(
+        "/complains/save_complain",
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
+      console.log("Complaint submitted successfully:", response);
+
+      if (response.status === 201) {
+        // Success message
+        alert("Complaint submitted successfully!");
+
+        // Clear form fields
+        setDescription("");
+        setFiles([]);
+        setAudioBlob(null);
+        setCategory("");
+        setSubcategory("");
+        setShowCategory(false);
+        setPincode("");
+        setState("");
+      }
+    } catch (err) {
+      console.error("Error submitting complaint:", err);
+      setError("Error submitting complaint. Please try again.");
     }
   };
 
   const handlePredictCategory = async () => {
     try {
-      //   const response = await fetch("/api/predict-category", {
-      //     method: "POST",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify({ description }),
-      //   });
-      // const data = await response.json();
-      //   setCategory(data.category || "");
-      //   setSubcategory(data.subcategory || "");
-      setCategory("Financial Crimes");
-      setSubcategory("Online Shopping/E-commerce Frauds");
+      const formData = new FormData();
+      formData.append("description", description);
+      const predictionResponse = await useAxios.post(
+        "/predicttion/predict_cat_subcat",
+        formData,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+      console.log("Prediction response:", predictionResponse.data);
+      const data = predictionResponse.data.data;
+      console.log("Category:", data);
+      // console.log("Subcategory:", data.sub_category);
+      setCategory(data.category);
+      setSubcategory(data.sub_category);
       setShowCategory(true);
     } catch (error) {
       console.error("Error predicting category:", error);
@@ -142,6 +191,38 @@ const ComplaintForm = () => {
             required
             sx={{ mb: 2 }}
           />
+          {/* Pincode & State Fields */}
+          <Grid container spacing={2} sx={{ marginBottom: 2 }}>
+            <Grid item xs={6}>
+              <Typography variant="body1" sx={{ mb: 1, textAlign: "left" }}>
+                Pincode:
+              </Typography>
+              <TextField
+                placeholder="Enter Pincode"
+                fullWidth
+                value={pincode}
+                onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
+                required
+                inputProps={{
+                  maxLength: 6,
+                  inputMode: "numeric",
+                  pattern: "[0-9]*",
+                }}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Typography variant="body1" sx={{ mb: 1, textAlign: "left" }}>
+                State:
+              </Typography>
+              <TextField
+                placeholder="Enter State"
+                fullWidth
+                value={state}
+                onChange={(e) => setState(e.target.value)}
+                required
+              />
+            </Grid>
+          </Grid>
           {showCategory && (
             <Grid container spacing={2} sx={{ marginBottom: 2 }}>
               <Grid item xs={6}>

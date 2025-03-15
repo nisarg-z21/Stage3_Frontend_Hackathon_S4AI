@@ -1,42 +1,30 @@
 // eslint-disable-next-line
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import { AuthContext } from "../context/AuthContext";
-// import useAxios from "../api/useAxios";
 import { Button, Card, TextField, Typography } from "@mui/material";
 
 const SignIn = () => {
-  const [mobile, setMobile] = useState("");
-  const [error, setError] = useState(""); // State for error message
-  // const { login } = useContext(AuthContext);
+  const [userId, setUserId] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSendOtp = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setError(""); // Clear previous error message
+    setError(""); // Clear previous errors
 
-    if (!mobile || mobile.length !== 10) {
-      setError("Please enter a valid 10-digit mobile number.");
+    if (!userId || !password) {
+      setError("Please enter both User ID and Password.");
       return;
     }
 
     try {
-      // const response = await useAxios.post("/users/send-otp", {
-      //   mobile,
-      // });
-      // const { success, message } = response.data;
-
-      // if (success) {
-      //   // Redirect to the OTP verification page
-      //   navigate(`/verify-otp/${mobile}`);
-      // } else {
-      //   setError(message);
-      // }
-      console.log("OTP sent to", mobile);
-      navigate(`/verifyOtp/${mobile}`);
+      // Add API call for authentication here
+      console.log("Logging in with:", userId, password);
+      navigate("/complains"); // Navigate to dashboard after successful login
     } catch (err) {
-      console.error("Send OTP error:", err);
-      setError("Failed to send OTP. Please try again.");
+      console.error("Login error:", err);
+      setError("Invalid credentials. Please try again.");
     }
   };
 
@@ -56,9 +44,9 @@ const SignIn = () => {
         variant="h5"
         sx={{ mb: 2, color: "#0361ae", fontWeight: "bold" }}
       >
-        Mobile OTP Login
+        Admin User Login
       </Typography>
-      <form onSubmit={handleSendOtp}>
+      <form onSubmit={handleLogin}>
         <Typography
           variant="body1"
           sx={{
@@ -68,22 +56,35 @@ const SignIn = () => {
             fontWeight: "bold",
           }}
         >
-          Enter Mobile Number:
+          User ID:
         </Typography>
         <TextField
-          type="tel"
+          type="text"
           fullWidth
-          placeholder="eg. 9090901212"
-          value={mobile}
-          onChange={(e) => {
-            const input = e.target.value;
-            if (/^\d*$/.test(input) && input.length <= 10) {
-              setMobile(input);
-            }
+          placeholder="Enter User ID"
+          value={userId}
+          onChange={(e) => setUserId(e.target.value)}
+          required
+          sx={{ mb: 2 }}
+        />
+
+        <Typography
+          variant="body1"
+          sx={{
+            mb: 1,
+            color: "black",
+            textAlign: "left",
+            fontWeight: "bold",
           }}
-          inputProps={{
-            maxLength: 10, // Restrict input to 10 digits
-          }}
+        >
+          Password:
+        </Typography>
+        <TextField
+          type="password"
+          fullWidth
+          placeholder="Enter Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
           sx={{ mb: 2 }}
         />
@@ -93,15 +94,16 @@ const SignIn = () => {
             {error}
           </Typography>
         )}
+
         <Button
           fullWidth
           variant="contained"
           sx={{ backgroundColor: "#0361ae", color: "white", mt: 1 }}
           onMouseOver={(e) => (e.target.style.backgroundColor = "#444")}
           onMouseOut={(e) => (e.target.style.backgroundColor = "#0361ae")}
-          onClick={handleSendOtp}
+          type="submit"
         >
-          Send OTP
+          Sign In
         </Button>
       </form>
       <Typography variant="body2" sx={{ mt: 2, color: "black" }}>
