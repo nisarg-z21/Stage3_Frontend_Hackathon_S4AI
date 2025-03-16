@@ -13,6 +13,7 @@ import {
   IconButton,
 } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const DataTable = ({
   data,
@@ -27,6 +28,7 @@ const DataTable = ({
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
   const [anchorEl, setAnchorEl] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null);
+  const navigate = useNavigate(); // Initialize navigate function
 
   const handleClick = (event, row) => {
     setAnchorEl(event.currentTarget);
@@ -75,6 +77,12 @@ const DataTable = ({
     return value; // Return other types as is
   };
 
+  const handleRowClick = (row) => {
+    if (row.complainId) {
+      navigate(`/complainScreen/${row.complainId}`); // Navigate to the complain screen
+    }
+  };
+
   return (
     <Paper style={{ width: "100%", overflow: "hidden" }}>
       <TableContainer style={{ overflowX: "auto" }}>
@@ -96,7 +104,11 @@ const DataTable = ({
               data
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => (
-                  <TableRow key={index}>
+                  <TableRow
+                    key={index}
+                    onClick={() => handleRowClick(row)}
+                    style={{ cursor: "pointer" }} // Add pointer cursor for UX
+                  >
                     {columns.map((column) => (
                       <TableCell key={column.id}>
                         {formatCellValue(row[column.id])}

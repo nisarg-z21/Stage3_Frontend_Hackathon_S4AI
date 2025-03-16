@@ -261,19 +261,15 @@ import {
   ListItemText,
   IconButton,
   Box,
-  Typography,
 } from "@mui/material";
 import {
   FaUser,
   FaCog,
-  FaUserTie,
-  FaTachometerAlt,
   FaBars,
-  FaSignal,
-  FaTable,
-  FaList,
+  FaClipboardList,
+  FaUserShield,
+  FaSignOutAlt,
 } from "react-icons/fa";
-import { FaCheckToSlot } from "react-icons/fa6";
 
 const Sidebar = () => {
   const location = useLocation(); // Get current route
@@ -283,12 +279,18 @@ const Sidebar = () => {
     setOpen(!open);
   };
 
+  // Hide sidebar if the route is "/signin"
+  if (location.pathname === "/signin") {
+    return null;
+  }
+
   return (
     <Box>
       <IconButton
         onClick={toggleDrawer}
         style={{
           color: "#fff",
+          backgroundColor: "#0361ae", // added background color blue
           position: "fixed",
           top: 160, // Adjust based on header height
           left: open ? 200 : 10,
@@ -314,43 +316,38 @@ const Sidebar = () => {
             color: "#fff",
             overflowX: "hidden",
             transition: "width 0.3s",
-            mt: "64px", // Match header height
-            height: "calc(100vh - 64px)",
+            mt: "160px", // Match header height
+            pt: "36px", // Adjust based on header height
+            height: "calc(100vh - 195px)",
           },
         }}
       >
-        <Box sx={{ pt: 2, px: 2, textAlign: "center" }}>
-          {open ? (
-            <Typography variant="h6">Algo Trading</Typography>
-          ) : (
-            <Typography variant="h6">&nbsp;</Typography>
-          )}
-        </Box>
         <List>
           {[
             {
-              to: "/dashboard",
-              icon: <FaTachometerAlt size={20} />,
-              label: "Dashboard",
-            },
-            { to: "/admin", icon: <FaUserTie size={20} />, label: "Admin" },
-            { to: "/profile", icon: <FaUser size={20} />, label: "Profile" },
-            { to: "/settings", icon: <FaCog size={20} />, label: "Settings" },
-            {
-              to: "/positions",
-              icon: <FaTable size={20} />,
-              label: "Positions",
-            },
-            { to: "/signals", icon: <FaSignal size={20} />, label: "Signals" },
-            {
-              to: "/decisionLogs",
-              icon: <FaList size={20} />,
-              label: "DecisionLogs",
+              to: "/complains",
+              icon: <FaClipboardList size={20} />,
+              label: "Complaints",
             },
             {
-              to: "/orders",
-              icon: <FaCheckToSlot size={20} />,
-              label: "Orders",
+              to: "/logs",
+              icon: <FaUserShield size={20} />,
+              label: "Logs",
+            },
+            {
+              to: "/errors",
+              icon: <FaUser size={20} />,
+              label: "Errors",
+            },
+            {
+              to: "/reports",
+              icon: <FaCog size={20} />,
+              label: "Reports",
+            },
+            {
+              to: "/signin",
+              icon: <FaSignOutAlt size={20} />,
+              label: "Logout",
             },
           ].map(({ to, icon, label }) => (
             <ListItem
@@ -360,10 +357,10 @@ const Sidebar = () => {
               to={to}
               sx={{
                 backgroundColor:
-                  location.pathname === to ? "#444" : "transparent",
+                  location.pathname === to ? "#3ba1f5" : "transparent",
                 color: "#fff",
                 borderRadius: "5px",
-                "&:hover": { backgroundColor: "#444" },
+                "&:hover": { backgroundColor: "#3ba1f5" },
                 p: 2,
               }}
             >

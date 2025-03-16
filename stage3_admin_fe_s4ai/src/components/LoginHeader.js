@@ -4,7 +4,6 @@ import {
   Toolbar,
   Box,
   Typography,
-  Button,
   IconButton,
   Menu,
   MenuItem,
@@ -13,16 +12,12 @@ import {
   Facebook,
   Instagram,
   LinkedIn,
-  Logout,
   Translate as TranslateIcon,
 } from "@mui/icons-material";
-import { useLocation, useNavigate } from "react-router-dom";
 const emblem = require("../assets/emblem-dark.png");
 const i4c = require("../assets/i4cpng.png");
 
 const Header = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
   const [anchorEl, setAnchorEl] = useState(null);
 
   // Handle language menu open/close
@@ -31,11 +26,6 @@ const Header = () => {
   };
   const handleMenuClose = () => {
     setAnchorEl(null);
-  };
-
-  const handleLogout = () => {
-    sessionStorage.clear(); // Clear session on logout
-    navigate("/signin"); // Redirect to Sign-In page
   };
 
   return (
@@ -114,60 +104,6 @@ const Header = () => {
         </Box>
       </Toolbar>
 
-      {/* Show Third Toolbar Only If NOT on /signin */}
-      {location.pathname !== "/signin" && (
-        <Toolbar
-          sx={{
-            display: "flex",
-            justifyContent: "flex-end",
-            alignItems: "center",
-            minHeight: "36px !important",
-            height: "36px",
-            p: 0,
-            gap: 1,
-          }}
-        >
-          <Button
-            sx={{
-              fontWeight: "bold",
-              color: "black",
-              fontSize: "0.75rem",
-              minWidth: "auto",
-              padding: "2px 6px",
-            }}
-          >
-            Logs
-          </Button>
-          <Button
-            sx={{
-              fontWeight: "bold",
-              color: "black",
-              fontSize: "0.75rem",
-              minWidth: "auto",
-              padding: "2px 6px",
-            }}
-          >
-            Errors
-          </Button>
-          <Button
-            sx={{
-              fontWeight: "bold",
-              color: "black",
-              fontSize: "0.75rem",
-              minWidth: "auto",
-              padding: "2px 6px",
-            }}
-          >
-            Reports
-          </Button>
-          <IconButton
-            onClick={handleLogout}
-            sx={{ color: "black", padding: "4px" }}
-          >
-            <Logout />
-          </IconButton>
-        </Toolbar>
-      )}
     </AppBar>
   );
 };

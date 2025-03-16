@@ -9,7 +9,6 @@ const Complains = () => {
   const fetchComplains = async () => {
     try {
       const response = await useAxios.get("/complains/get_all_complains");
-      console.log("response:", response);
       const data = response.data.data.data;
       setComplains(data);
     } catch (error) {
@@ -26,8 +25,8 @@ const Complains = () => {
     "mobileNo",
     "description",
     "uploadedFiles",
-    "category",
-    "subcategory",
+    "predicted_category",
+    "predicted_subcategory",
   ];
 
   return (

@@ -7,6 +7,9 @@ import {
   Typography,
   IconButton,
   Grid,
+  FormControl,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import MicIcon from "@mui/icons-material/Mic";
@@ -22,11 +25,70 @@ const ComplaintForm = () => {
   const [permissionError, setPermissionError] = useState("");
   const [category, setCategory] = useState("");
   const [subcategory, setSubcategory] = useState("");
-  const [showCategory, setShowCategory] = useState(false);
   const mediaRecorderRef = useRef(null);
   const audioChunks = useRef([]);
   const [pincode, setPincode] = useState("");
   const [state, setState] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const categories = {
+    "Crime Against Women & Children": [
+      "Rape - Gang Rape",
+      "Sexual Harassment",
+      "Cyber Voyeurism",
+      "Cyber Stalking",
+      "Cyber Bullying",
+      "Child Pornography - Child Sexual Abuse Material",
+      "Child Sexual Exploitative Material",
+      "Publishing and transmitting obscene material - sexually explicit material",
+      "Fake Social Media Profile",
+      "Defamation",
+      "Cyber Blackmailing and Threatening",
+      "Online Human Trafficking",
+    ],
+    "Financial Crimes": [
+      "Investment Scam - Trading Scam",
+      "Online Job Fraud",
+      "Tech Support Scam - Customer Care Scam",
+      "Online Loan Fraud",
+      "Matrimonial - Romance Scam - Honey Trapping Scam",
+      "Impersonation of Government Servant",
+      "Cheating by Impersonation",
+      "SIM Swap Fraud",
+      "Sextortion - Nude Video",
+      "Aadhar Enabled Payment System AEPS fraud - Biometric Cloning",
+      "Identity Theft",
+      "Courier Parcel Scam",
+      "Phishing",
+      "Online Shopping E-commerce Frauds",
+      "Advance Fee",
+      "Real Estate - Rental Payment",
+    ],
+    "Cyber Attack - Dependent Crimes": [
+      "Malware Attack",
+      "Ransomware Attack",
+      "Hacking Defacement",
+      "Data Breach Theft",
+      "Tampering with computer source documents",
+      "Denial of Service Distributed - Denial of Service DDOS attacks",
+      "SQL Injection",
+    ],
+    "Other Cyber Crime": [
+      "Fake profile",
+      "Cyber Terrorism",
+      "Social Media Account Hacking",
+      "Online Gambling Betting Frauds",
+      "Business Email Compromise Email Takeover",
+      "Provocative Speech for unlawful acts",
+      "Fake News",
+      "Cyber Pornography",
+      "Sending obscene material",
+      "Intellectual Property IPR Thefts",
+      "Cyber Enabled Human Trafficking - Cyber Slavery",
+      "Online Piracy",
+      "Spoofing",
+    ],
+  };
 
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
@@ -124,7 +186,6 @@ const ComplaintForm = () => {
         setAudioBlob(null);
         setCategory("");
         setSubcategory("");
-        setShowCategory(false);
         setPincode("");
         setState("");
       }
@@ -134,24 +195,34 @@ const ComplaintForm = () => {
     }
   };
 
+  const handleCategoryChange = (event) => {
+    setCategory(event.target.value);
+    setSubcategory(""); // Reset subcategory when category changes
+  };
+
   const handlePredictCategory = async () => {
     try {
+      setLoading(true);
       const formData = new FormData();
       formData.append("description", description);
+
       const predictionResponse = await useAxios.post(
         "/predicttion/predict_cat_subcat",
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
+
       console.log("Prediction response:", predictionResponse.data);
       const data = predictionResponse.data.data;
-      console.log("Category:", data);
-      // console.log("Subcategory:", data.sub_category);
-      setCategory(data.category);
-      setSubcategory(data.sub_category);
-      setShowCategory(true);
+      console.log("Category:", data.category);
+      console.log("Subcategory:", data.sub_category);
+
+      setCategory(data.category || "");
+      setSubcategory(data.sub_category || "");
     } catch (error) {
       console.error("Error predicting category:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -202,7 +273,6 @@ const ComplaintForm = () => {
                 fullWidth
                 value={pincode}
                 onChange={(e) => setPincode(e.target.value.replace(/\D/g, ""))}
-                required
                 inputProps={{
                   maxLength: 6,
                   inputMode: "numeric",
@@ -219,26 +289,57 @@ const ComplaintForm = () => {
                 fullWidth
                 value={state}
                 onChange={(e) => setState(e.target.value)}
-                required
               />
             </Grid>
           </Grid>
-          {showCategory && (
-            <Grid container spacing={2} sx={{ marginBottom: 2 }}>
-              <Grid item xs={6}>
-                <Typography variant="body1" sx={{ mb: 1, textAlign: "left" }}>
-                  Category:
-                </Typography>
-                <TextField fullWidth value={category} disabled />
-              </Grid>
-              <Grid item xs={6}>
-                <Typography variant="body1" sx={{ mb: 1, textAlign: "left" }}>
-                  Subcategory:
-                </Typography>
-                <TextField fullWidth value={subcategory} disabled />
-              </Grid>
+          <Grid container spacing={2} sx={{ marginBottom: 2 }}>
+            {/* Category Dropdown */}
+            <Grid item xs={6}>
+              <Typography variant="body1" sx={{ mb: 1, textAlign: "left" }}>
+                Category:
+              </Typography>
+              <FormControl fullWidth>
+                <Select
+                  value={category}
+                  onChange={handleCategoryChange}
+                  displayEmpty
+                >
+                  <MenuItem value="" disabled>
+                    Select Category
+                  </MenuItem>
+                  {Object.keys(categories).map((cat) => (
+                    <MenuItem key={cat} value={cat}>
+                      {cat}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Grid>
-          )}
+
+            {/* Subcategory Dropdown */}
+            <Grid item xs={6}>
+              <Typography variant="body1" sx={{ mb: 1, textAlign: "left" }}>
+                Subcategory:
+              </Typography>
+              <FormControl fullWidth>
+                <Select
+                  value={subcategory}
+                  onChange={(e) => setSubcategory(e.target.value)}
+                  displayEmpty
+                  disabled={!category}
+                >
+                  <MenuItem value="" disabled>
+                    Select Subcategory
+                  </MenuItem>
+                  {categories[category]?.map((subcat) => (
+                    <MenuItem key={subcat} value={subcat}>
+                      {subcat}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
+          </Grid>
 
           {files.length > 0 && (
             <Typography variant="body2" sx={{ mb: 2, textAlign: "left" }}>
@@ -334,7 +435,7 @@ const ComplaintForm = () => {
             sx={{ backgroundColor: "#0361ae", color: "white", flex: 1 }}
             onClick={handlePredictCategory}
           >
-            Predict Category
+            {loading ? "Predicting..." : "Predict Category"}
           </Button>
           <Button
             type="submit"
