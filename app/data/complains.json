@@ -1,0 +1,164 @@
+[
+    {
+        "complainId": "C20250316000001",
+        "description": "someone call me and ask for money",
+        "predictedCategory": "Crime Against Women & Children",
+        "predictedSubcategory": "Fake Social Media Profile",
+        "manualCategory": "Online Fraud",
+        "manualSubcategory": "Phishing Scam",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "9090901212",
+        "uploadedFiles": [],
+        "audioFile": null,
+        "date": "2025-03-16"
+    },
+    {
+        "complainId": "C20250316000002",
+        "description": "someone create fake account of my identity.",
+        "predictedCategory": "Crime Against Women & Children",
+        "predictedSubcategory": "Fake Social Media Profile",
+        "manualCategory": "Cyber Attack - Dependent Crimes",
+        "manualSubcategory": "Identity Theft",
+        "state": "Gujarat",
+        "pincode": "360054",
+        "mobileNo": "9090901212",
+        "uploadedFiles": [
+            "uploads/C20250316000002/Screenshot 2025-03-16 at 4.31.54 PM.png"
+        ],
+        "audioFile": null,
+        "date": "2025-03-16"
+    },
+    {
+        "complainId": "C20250316000003",
+        "description": "I had continue received random calls and abusive messages in my whatsapp Someone added my number in a unknown facebook group name with Only Girls and still getting calls from unknown numbers pls help me and sort out the issue as soon as possible Thank you",
+        "predictedCategory": "Financial Crimes",
+        "predictedSubcategory": "Advance Fee",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "9090901212",
+        "uploadedFiles": [
+            "uploads/C20250316000003/emoji-chat.png"
+        ],
+        "audioFile": "uploads/C20250316000003/recording.wav",
+        "date": "2025-03-16"
+    },
+    {
+        "complainId": "C20250316000004",
+        "description": "He is acting like a police and demanding for money by adding sections in the text messages I request you to take an immediate action on him Frequently he is harassing with these messages For reference please find attached files.",
+        "predictedCategory": "Crime Against Women & Children",
+        "predictedSubcategory": "Cyber Voyeurism",
+        "manualCategory": "Harassment & Stalking",
+        "manualSubcategory": "Online Harassment",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "9090901212",
+        "uploadedFiles": [
+            "uploads/C20250316000004/Screenshot 2025-03-16 at 5.29.28 PM.png"
+        ],
+        "audioFile": null,
+        "date": "2025-03-16"
+    },
+    {
+        "complainId": "C20250316000005",
+        "description": "I have a friend with whom I made deal to exchange my gaming account of BGMI and he found an account as well for exchange So I shared my login details with him to check the inventory available in my account Suddenly I received a mail that my email id has been changed When I tried contacting him he blocked my call and when I tried calling on WhatsApp he is not answering the call I have spent more than Rs in my gaming account Request you to please regain my account",
+        "predictedCategory": "Financial Crimes",
+        "predictedSubcategory": "Advance Fee",
+        "state": "Gujarat",
+        "pincode": "360005",
+        "mobileNo": "9090901212",
+        "uploadedFiles": [],
+        "audioFile": "uploads/C20250316000005/recording.wav",
+        "date": "2025-03-16"
+    },
+    {
+        "complainId": "C20250317000001",
+        "description": "money stolen",
+        "predictedCategory": "Crime Against Women & Children",
+        "predictedSubcategory": "Fake Social Media Profile",
+        "manualCategory": "Financial Crimes",
+        "manualSubcategory": "Online Loan Fraud",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "7832938232",
+        "uploadedFiles": [
+            "uploads/C20250317000001/Screenshot 2025-03-16 at 10.27.14 PM.png"
+        ],
+        "audioFile": null,
+        "date": "2025-03-17"
+    },
+    {
+        "complainId": "C20250317000002",
+        "description": "what about this complaint",
+        "predictedCategory": "",
+        "predictedSubcategory": "",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "7832938232",
+        "uploadedFiles": [],
+        "audioFile": "uploads/C20250317000002/recording.wav",
+        "date": "2025-03-17"
+    },
+    {
+        "complainId": "C20250320000001",
+        "description": "cyber bullying",
+        "predictedCategory": "Financial Crimes",
+        "predictedSubcategory": "Online Loan Fraud",
+        "manualCategory": "Cyber Attack - Dependent Crimes",
+        "manualSubcategory": "Data Breach Theft",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "7832938232",
+        "uploadedFiles": [],
+        "audioFile": null,
+        "date": "2025-03-20"
+    },
+    {
+        "complainId": "C20250320000002",
+        "description": "Mera mobile hack ho gya he or data chori ho gaya",
+        "predictedCategory": "Crime Against Women & Children",
+        "predictedSubcategory": "Defamation",
+        "manualCategory": "Cyber Attack - Dependent Crimes",
+        "manualSubcategory": "Data Breach Theft",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "7832938232",
+        "uploadedFiles": [
+            "uploads/C20250320000002/emoji-chat.png"
+        ],
+        "audioFile": "uploads/C20250320000002/recording.wav",
+        "date": "2025-03-20"
+    },
+    {
+        "complainId": "C20250320000003",
+        "description": "mera mobile hack ho gaya and data chori ho gaya he",
+        "predictedCategory": "Crime Against Women & Children",
+        "predictedSubcategory": "Defamation",
+        "manualCategory": "Cyber Attack - Dependent Crimes",
+        "manualSubcategory": "Data Breach Theft",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "7832938232",
+        "uploadedFiles": [
+            "uploads/C20250320000003/emoji-chat.png"
+        ],
+        "audioFile": "uploads/C20250320000003/recording.wav",
+        "date": "2025-03-20"
+    },
+    {
+        "complainId": "C20250320000004",
+        "description": "someone create my fake account in instagram",
+        "predictedCategory": "Crime Against Women & Children",
+        "predictedSubcategory": "Child Sexual Exploitative Material",
+        "manualCategory": "Other Cyber Crime",
+        "manualSubcategory": "Fake profile",
+        "state": "",
+        "pincode": "",
+        "mobileNo": "7832938232",
+        "uploadedFiles": [
+            "uploads/C20250320000004/i4cpng.png"
+        ],
+        "audioFile": null,
+        "date": "2025-03-20"
+    }
+]
