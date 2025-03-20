@@ -23,13 +23,22 @@ const ComplaintForm = () => {
   const [audioBlob, setAudioBlob] = useState(null);
   const [recording, setRecording] = useState(false);
   const [permissionError, setPermissionError] = useState("");
-  const [category, setCategory] = useState("");
-  const [subcategory, setSubcategory] = useState("");
+  // const [category, setCategory] = useState("");
+  // const [subcategory, setSubcategory] = useState("");
   const mediaRecorderRef = useRef(null);
   const audioChunks = useRef([]);
   const [pincode, setPincode] = useState("");
   const [state, setState] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const [predictedCategory, setPredictedCategory] = useState(""); // From backend
+  const [manualCategory, setManualCategory] = useState("");
+
+  const [predictedSubcategory, setPredictedSubcategory] = useState(""); // From backend
+  const [manualSubcategory, setManualSubcategory] = useState("");
+
+  const [logs, setLogs] = useState([]); // Store change logs
+  const mobileNo = localStorage.getItem("mobileNo");
 
   const categories = {
     "Crime Against Women & Children": [
@@ -90,9 +99,28 @@ const ComplaintForm = () => {
     ],
   };
 
+  // const handleFileChange = (event) => {
+  //   const selectedFiles = Array.from(event.target.files);
+  //   setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+  // };
+
   const handleFileChange = (event) => {
     const selectedFiles = Array.from(event.target.files);
-    setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+
+    if (selectedFiles.length > 0) {
+      setFiles((prevFiles) => [...prevFiles, ...selectedFiles]);
+
+      // Log the uploaded files
+      setLogs((prevLogs) => [
+        ...prevLogs,
+        {
+          logs:
+            "User uploaded files: " +
+            selectedFiles.map((file) => file.name).join(", "),
+          mobileNo: mobileNo,
+        },
+      ]);
+    }
   };
 
   const handleRemoveFile = (index) => {
@@ -123,6 +151,10 @@ const ComplaintForm = () => {
         mediaRecorder.start();
         setRecording(true);
         setPermissionError("");
+        setLogs((prevLogs) => [
+          ...prevLogs,
+          { logs: "User recorded an audio file." },
+        ]);
       } catch (error) {
         console.error("Microphone access denied", error);
         setPermissionError(
@@ -149,11 +181,14 @@ const ComplaintForm = () => {
 
     const formData = new FormData();
     formData.append("description", description);
-    formData.append("category", category);
-    formData.append("subcategory", subcategory);
+    // formData.append("category", category);
+    // formData.append("subcategory", subcategory);
+    formData.append("predictedCategory", predictedCategory);
+    formData.append("predictedSubcategory", predictedSubcategory);
+    formData.append("manualCategory", manualCategory);
+    formData.append("manualSubcategory", manualSubcategory);
     formData.append("pincode", pincode);
     formData.append("state", state);
-    const mobileNo = localStorage.getItem("mobileNo");
     formData.append("mobileNo", mobileNo);
 
     // Append uploaded files
@@ -184,20 +219,22 @@ const ComplaintForm = () => {
         setDescription("");
         setFiles([]);
         setAudioBlob(null);
-        setCategory("");
-        setSubcategory("");
+        // setCategory("");
+        setPredictedCategory("");
+        // setSubcategory("");
+        setPredictedSubcategory("");
+        setManualSubcategory("");
+        setManualCategory("");
         setPincode("");
         setState("");
+        setLogs([]);
       }
+      const result = await useAxios.post("/logs/add_log", { logs });
+      console.log("result :: ", result);
     } catch (err) {
       console.error("Error submitting complaint:", err);
       setError("Error submitting complaint. Please try again.");
     }
-  };
-
-  const handleCategoryChange = (event) => {
-    setCategory(event.target.value);
-    setSubcategory(""); // Reset subcategory when category changes
   };
 
   const handlePredictCategory = async () => {
@@ -214,11 +251,11 @@ const ComplaintForm = () => {
 
       console.log("Prediction response:", predictionResponse.data);
       const data = predictionResponse.data.data;
-      console.log("Category:", data.category);
-      console.log("Subcategory:", data.sub_category);
 
-      setCategory(data.category || "");
-      setSubcategory(data.sub_category || "");
+      // setCategory(data.category || "");
+      setPredictedCategory(data.category || "");
+      // setSubcategory(data.sub_category || "");
+      setPredictedSubcategory(data.sub_category || "");
     } catch (error) {
       console.error("Error predicting category:", error);
     } finally {
@@ -300,8 +337,22 @@ const ComplaintForm = () => {
               </Typography>
               <FormControl fullWidth>
                 <Select
-                  value={category}
-                  onChange={handleCategoryChange}
+                  value={manualCategory || predictedCategory} // Show manual if selected, else predicted
+                  onChange={(event) => {
+                    const newCategory = event.target.value;
+                    if (newCategory !== predictedCategory) {
+                      setManualCategory(newCategory);
+                      setLogs((prevLogs) => [
+                        ...prevLogs,
+                        {
+                          logs: `Changed Category from "${predictedCategory}" to "${newCategory}"`,
+                          mobileNo: mobileNo,
+                        },
+                      ]);
+                    } else {
+                      setManualCategory(""); // Reset manual if same as predicted
+                    }
+                  }}
                   displayEmpty
                 >
                   <MenuItem value="" disabled>
@@ -323,19 +374,35 @@ const ComplaintForm = () => {
               </Typography>
               <FormControl fullWidth>
                 <Select
-                  value={subcategory}
-                  onChange={(e) => setSubcategory(e.target.value)}
+                  value={manualSubcategory || predictedSubcategory} // Show manual if selected, else predicted
+                  onChange={(event) => {
+                    const newSubcategory = event.target.value;
+                    if (newSubcategory !== predictedSubcategory) {
+                      setManualSubcategory(newSubcategory);
+                      setLogs((prevLogs) => [
+                        ...prevLogs,
+                        {
+                          logs: `Changed Subcategory from "${predictedSubcategory}" to "${newSubcategory}"`,
+                          mobileNo: mobileNo,
+                        },
+                      ]);
+                    } else {
+                      setManualSubcategory(""); // Reset manual if same as predicted
+                    }
+                  }}
                   displayEmpty
-                  disabled={!category}
+                  disabled={!manualCategory && !predictedCategory} // Disable if no category selected
                 >
                   <MenuItem value="" disabled>
                     Select Subcategory
                   </MenuItem>
-                  {categories[category]?.map((subcat) => (
-                    <MenuItem key={subcat} value={subcat}>
-                      {subcat}
-                    </MenuItem>
-                  ))}
+                  {categories[manualCategory || predictedCategory]?.map(
+                    (subcat) => (
+                      <MenuItem key={subcat} value={subcat}>
+                        {subcat}
+                      </MenuItem>
+                    )
+                  )}
                 </Select>
               </FormControl>
             </Grid>

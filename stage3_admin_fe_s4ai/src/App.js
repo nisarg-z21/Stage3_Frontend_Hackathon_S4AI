@@ -14,6 +14,8 @@ import LoginHeader from "./components/LoginHeader";
 import Complains from "./layouts/ComplainsTable";
 import ComplaintDetails from "./layouts/ComplainScreen";
 import Sidebar from "./components/Sidebar";
+import Report from "./layouts/Report";
+import Logs from "./layouts/Logs";
 
 function App() {
   return (
@@ -29,7 +31,9 @@ function App() {
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/verifyOtp/:mobile" element={<VerifyOtp />} />
                 <Route path="/complains" element={<Complains />} />
-                <Route path="/complainScreen/:complaintId" element={<ComplaintDetails />} />
+                <Route path="/reports" element={<Report />} />
+                <Route path="/logs" element={<Logs />} />
+                <Route path="/complains/complainScreen/:complaintId" element={<ComplaintDetails />} />
               </Routes>
             </Box>
           </Box>

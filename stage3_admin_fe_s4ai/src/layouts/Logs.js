@@ -3,33 +3,24 @@ import useAxios from "../api/useAxios";
 import DataTable from "../components/DataTable";
 import { Typography, Box } from "@mui/material";
 
-const Complains = () => {
-  const [complains, setComplains] = useState([]);
+const Logs = () => {
+  const [logs, setLogs] = useState([]);
 
-  const fetchComplains = async () => {
+  const fetchLogs = async () => {
     try {
-      const response = await useAxios.get("/complains/get_all_complains");
-      const data = response.data.data.data;
-      setComplains(data);
+      const response = await useAxios.get("/logs/get_all_logs");
+      const data = response.data;
+      setLogs(data);
     } catch (error) {
-      console.error("Error fetching complains:", error);
+      console.error("Error fetching Logs:", error);
     }
   };
 
   useEffect(() => {
-    fetchComplains();
+    fetchLogs();
   }, []);
 
-  const columnOrder = [
-    "complainId",
-    "mobileNo",
-    "description",
-    "uploadedFiles",
-    "predictedCategory",
-    "predictedSubcategory",
-    "manualCategory",
-    "manualSubcategory",
-  ];
+  const columnOrder = ["logs", "mobileNo", "timestamp"];
 
   return (
     <Box
@@ -47,10 +38,10 @@ const Complains = () => {
         sx={{ marginTop: "20px", marginBottom: "20px" }}
         gutterBottom
       >
-        Complain Table :
+        Logs Table :
       </Typography>
       <DataTable
-        data={complains}
+        data={logs}
         columnOrder={columnOrder}
         message="No orders found."
       />
@@ -58,4 +49,4 @@ const Complains = () => {
   );
 };
 
-export default Complains;
+export default Logs;

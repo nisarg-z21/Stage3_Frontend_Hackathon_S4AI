@@ -146,12 +146,25 @@ const ComplaintDetails = () => {
               Category Details
             </Typography>
             <Typography>
-              <strong>Category:</strong> {complain?.predicted_category ?? "N/A"}
+              <strong>Predicted Category:</strong>{" "}
+              {complain?.predictedCategory ?? "N/A"}
             </Typography>
             <Typography>
-              <strong>Subcategory:</strong>{" "}
-              {complain?.predicted_subcategory ?? "N/A"}
+              <strong>Predicted Subcategory:</strong>{" "}
+              {complain?.predictedSubcategory ?? "N/A"}
             </Typography>
+            {complain?.manualCategory && (
+              <Typography>
+                <strong>Manual Category:</strong>{" "}
+                {complain?.manualCategory ?? "N/A"}
+              </Typography>
+            )}
+            {complain?.manualSubcategory && (
+              <Typography>
+                <strong>Manual Subcategory:</strong>{" "}
+                {complain?.manualSubcategory ?? "N/A"}
+              </Typography>
+            )}
           </CardContent>
         </Card>
         <Card sx={{ flex: 2 }}>

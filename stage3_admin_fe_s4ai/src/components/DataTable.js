@@ -79,7 +79,7 @@ const DataTable = ({
 
   const handleRowClick = (row) => {
     if (row.complainId) {
-      navigate(`/complainScreen/${row.complainId}`); // Navigate to the complain screen
+      navigate(`/complains/complainScreen/${row.complainId}`); // Navigate to the complain screen
     }
   };
 

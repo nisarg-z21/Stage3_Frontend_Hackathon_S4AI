@@ -356,8 +356,9 @@ const Sidebar = () => {
               component={Link}
               to={to}
               sx={{
-                backgroundColor:
-                  location.pathname === to ? "#3ba1f5" : "transparent",
+                backgroundColor: location.pathname.startsWith(to)
+                  ? "#3ba1f5"
+                  : "transparent",
                 color: "#fff",
                 borderRadius: "5px",
                 "&:hover": { backgroundColor: "#3ba1f5" },
