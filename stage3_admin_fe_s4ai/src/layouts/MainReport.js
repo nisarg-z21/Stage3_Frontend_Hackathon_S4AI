@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Card, CardContent, Grid, Typography } from "@mui/material";
+import { Card, CardContent, Divider, Grid, Typography } from "@mui/material";
 import useAxios from "../api/useAxios";
 
-const Report = () => {
-  const [reports, setReports] = useState([]);
+const MainReport = () => {
+  const [reports, setReports] = useState({});
   const fetchReports = async () => {
     try {
       const response = await useAxios.get("/reports/get_all_reports");
@@ -13,6 +13,8 @@ const Report = () => {
       console.error("Error fetching reports:", error);
     }
   };
+  console.log("reports : ",reports);
+
 
   const fetchGraph = async (filename) => {
     try {
@@ -28,7 +30,6 @@ const Report = () => {
     }
   }
 
-
   useEffect(() => {
     fetchReports();
   }, []);
@@ -43,7 +44,7 @@ const Report = () => {
             >
               <CardContent>
                 <Typography variant="h5" gutterBottom sx={{ fontWeight: "bold" }}>
-                  {item.title}
+                  {item[index]}
                 </Typography>
                 <Typography variant="body2">{item.description}</Typography>
               </CardContent>
@@ -56,4 +57,4 @@ const Report = () => {
   );
 };
 
-export default Report;
+export default MainReport;

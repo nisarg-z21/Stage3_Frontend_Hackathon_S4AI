@@ -62,20 +62,20 @@ const DataTable = ({
   const columns =
     columnOrder.length > 0
       ? columnOrder.map((key) => ({
-          id: key,
-          label: formatColumnLabel(key),
-        }))
+        id: key,
+        label: formatColumnLabel(key),
+      }))
       : extractedColumns.map((key) => ({
-          id: key,
-          label: formatColumnLabel(key),
-        }));
+        id: key,
+        label: formatColumnLabel(key),
+      }));
 
   // Function to properly format cell values
-  const formatCellValue = (value) => {
-    if (typeof value === "boolean") return value ? "Yes" : "No"; // Convert boolean to "Yes"/"No"
-    if (value === null || value === undefined) return "-"; // Handle null/undefined cases
-    return value; // Return other types as is
-  };
+  // const formatCellValue = (value) => {
+  //   if (typeof value === "boolean") return value ? "Yes" : "No"; // Convert boolean to "Yes"/"No"
+  //   if (value === null || value === undefined) return "-"; // Handle null/undefined cases
+  //   return value; // Return other types as is
+  // };
 
   const handleRowClick = (row) => {
     if (row.complainId) {
@@ -83,7 +83,97 @@ const DataTable = ({
     }
   };
 
+  const formatCellValue = (value) => {
+    if (typeof value === "boolean") return value ? "Yes" : "No"; // Convert boolean to "Yes"/"No"
+    if (value === null || value === undefined) return "-"; // Handle null/undefined cases
+    if (typeof value === "string" && value.length > 500) {
+      return value.substring(0, 500) + "..."; // Truncate string to 200 characters and add "..."
+    }
+    return value; // Return other types as is
+  };
+
   return (
+    // <Paper style={{ width: "100%", overflow: "hidden" }}>
+    //   <TableContainer style={{ overflowX: "auto" }}>
+    //     <Table>
+    //       <TableHead>
+    //         <TableRow>
+    //           {columns.map((column) => (
+    //             <TableCell key={column.id} style={{ fontWeight: "bold" }}>
+    //               {column.label}
+    //             </TableCell>
+    //           ))}
+    //           {showAction && (
+    //             <TableCell style={{ fontWeight: "bold" }}>Action</TableCell>
+    //           )}
+    //         </TableRow>
+    //       </TableHead>
+    //       <TableBody>
+    //         {data.length > 0 ? (
+    //           data
+    //             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+    //             .map((row, index) => (
+    //               <TableRow
+    //                 key={index}
+    //                 onClick={() => handleRowClick(row)}
+    //                 style={{ cursor: "pointer" }} // Add pointer cursor for UX
+    //               >
+    //                 {columns.map((column) => (
+    //                   <TableCell key={column.id}>
+    //                     {formatCellValue(row[column.id])}
+    //                   </TableCell>
+    //                 ))}
+    //                 {showAction && (
+    //                   <TableCell>
+    //                     <IconButton
+    //                       onClick={(event) => handleClick(event, row)}
+    //                     >
+    //                       <MoreVertIcon />
+    //                     </IconButton>
+    //                     <Menu
+    //                       anchorEl={anchorEl}
+    //                       open={Boolean(anchorEl)}
+    //                       onClose={handleClose}
+    //                     >
+    //                       {menuItems.map((menuItem, idx) => (
+    //                         <MenuItem
+    //                           key={idx}
+    //                           onClick={() => {
+    //                             menuItem.onClick(selectedRow);
+    //                             handleClose();
+    //                           }}
+    //                         >
+    //                           {menuItem.label}
+    //                         </MenuItem>
+    //                       ))}
+    //                     </Menu>
+    //                   </TableCell>
+    //                 )}
+    //               </TableRow>
+    //             ))
+    //         ) : (
+    //           <TableRow>
+    //             <TableCell
+    //               colSpan={columns.length + 1}
+    //               style={{ textAlign: "center", color: "#777" }}
+    //             >
+    //               {message}
+    //             </TableCell>
+    //           </TableRow>
+    //         )}
+    //       </TableBody>
+    //     </Table>
+    //   </TableContainer>
+    //   <TablePagination
+    //     rowsPerPageOptions={rowsPerPageOptions}
+    //     component="div"
+    //     count={data.length}
+    //     rowsPerPage={rowsPerPage}
+    //     page={page}
+    //     onPageChange={handleChangePage}
+    //     onRowsPerPageChange={handleChangeRowsPerPage}
+    //   />
+    // </Paper>
     <Paper style={{ width: "100%", overflow: "hidden" }}>
       <TableContainer style={{ overflowX: "auto" }}>
         <Table>
@@ -110,15 +200,13 @@ const DataTable = ({
                     style={{ cursor: "pointer" }} // Add pointer cursor for UX
                   >
                     {columns.map((column) => (
-                      <TableCell key={column.id}>
+                      <TableCell key={column.id} style={{ maxWidth: "200px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
                         {formatCellValue(row[column.id])}
                       </TableCell>
                     ))}
                     {showAction && (
                       <TableCell>
-                        <IconButton
-                          onClick={(event) => handleClick(event, row)}
-                        >
+                        <IconButton onClick={(event) => handleClick(event, row)}>
                           <MoreVertIcon />
                         </IconButton>
                         <Menu
@@ -130,7 +218,7 @@ const DataTable = ({
                             <MenuItem
                               key={idx}
                               onClick={() => {
-                                menuItem.onClick(selectedRow);
+                                menuItem.onClick(row);
                                 handleClose();
                               }}
                             >

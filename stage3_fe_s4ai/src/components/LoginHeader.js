@@ -128,7 +128,7 @@ const Header = () => {
             gap: 1,
           }}
         >
-          <Button
+          {/* <Button
             sx={{
               fontWeight: "bold",
               color: "black",
@@ -160,10 +160,10 @@ const Header = () => {
             }}
           >
             Reports
-          </Button>
+          </Button> */}
           <IconButton
             onClick={handleLogout}
-            sx={{ color: "black", padding: "4px" }}
+            sx={{ color: "white", padding: "4px" }}
           >
             <Logout />
           </IconButton>
