@@ -16,6 +16,8 @@ import ComplaintDetails from "./layouts/ComplainScreen";
 import Sidebar from "./components/Sidebar";
 import Report from "./layouts/Report";
 import Logs from "./layouts/Logs";
+import KeywordGraphScreen from "./layouts/KeywordGraphScreen";
+import KeywordDetailScreen from "./layouts/KeywordDetailScreen";
 
 function App() {
   return (
@@ -33,7 +35,12 @@ function App() {
                 <Route path="/complains" element={<Complains />} />
                 <Route path="/reports" element={<Report />} />
                 <Route path="/logs" element={<Logs />} />
-                <Route path="/complains/complainScreen/:complaintId" element={<ComplaintDetails />} />
+                <Route path="/keywordGraphScreen" element={<KeywordGraphScreen />} />
+                <Route path="/keywordDetailScreen" element={<KeywordDetailScreen />} />
+                <Route
+                  path="/complains/complainScreen/:complaintId"
+                  element={<ComplaintDetails />}
+                />
               </Routes>
             </Box>
           </Box>

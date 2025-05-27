@@ -27,17 +27,17 @@ const DataTable = ({
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(defaultRowsPerPage);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [selectedRow, setSelectedRow] = useState(null);
+  // const [selectedRow, setSelectedRow] = useState(null);
   const navigate = useNavigate(); // Initialize navigate function
 
   const handleClick = (event, row) => {
     setAnchorEl(event.currentTarget);
-    setSelectedRow(row);
+    // setSelectedRow(row);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    setSelectedRow(null);
+    // setSelectedRow(null);
   };
 
   const handleChangePage = (_, newPage) => {

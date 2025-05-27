@@ -67,13 +67,32 @@ const Header = () => {
             <MenuItem onClick={handleMenuClose}>English</MenuItem>
             <MenuItem onClick={handleMenuClose}>हिंदी</MenuItem>
           </Menu>
-          <IconButton color="inherit">
+          <IconButton
+            color="inherit"
+            onClick={() =>
+              window.open("https://www.facebook.com/CyberDosti4C", "_blank")
+            }
+          >
             <Facebook />
           </IconButton>
-          <IconButton color="inherit">
+
+          <IconButton
+            color="inherit"
+            onClick={() =>
+              window.open("https://www.instagram.com/cyberdosti4c", "_blank")
+            }
+          >
             <Instagram />
           </IconButton>
-          <IconButton color="inherit">
+          <IconButton
+            color="inherit"
+            onClick={() =>
+              window.open(
+                "https://in.linkedin.com/company/cyberdosti4c",
+                "_blank"
+              )
+            }
+          >
             <LinkedIn />
           </IconButton>
         </Box>
@@ -103,7 +122,6 @@ const Header = () => {
           </Typography>
         </Box>
       </Toolbar>
-
     </AppBar>
   );
 };

@@ -38,8 +38,11 @@ const ComplaintDetails = () => {
   const fetchFile = async (filename) => {
     console.log("FetchFiles", filename);
     try {
+      // Normalize path to use forward slashes
+      const normalizedFilename = filename.replace(/\\/g, "/");
+
       const response = await useAxios.get("/complains/get_uploaded_file", {
-        params: { filename: filename },
+        params: { filename: normalizedFilename },
         responseType: "blob",
       });
       // Create a Blob URL
@@ -71,9 +74,12 @@ const ComplaintDetails = () => {
 
   const fetchAudioFile = async (filename) => {
     try {
-      const response = await useAxios.get(`/complains/get_uploaded_file`, {
-        params: { filename: filename },
-        responseType: "blob", // Important for handling binary data
+      // Normalize path to use forward slashes
+      const normalizedFilename = filename.replace(/\\/g, "/");
+
+      const response = await useAxios.get("/complains/get_uploaded_file", {
+        params: { filename: normalizedFilename },
+        responseType: "blob",
       });
 
       // Create a Blob URL
@@ -87,7 +93,7 @@ const ComplaintDetails = () => {
   const fetchOCRText = async () => {
     try {
       const response = await useAxios.get(`/OCR/get_ocr_text`, {
-        params: { complain_id: complaintId }
+        params: { complain_id: complaintId },
       });
       const data = response.data.data;
       setOcrText(data);
@@ -102,7 +108,7 @@ const ComplaintDetails = () => {
   const fetchAudioext = async () => {
     try {
       const response = await useAxios.get(`/audio/get_audio_text`, {
-        params: { complain_id: complaintId }
+        params: { complain_id: complaintId },
       });
       const data = response.data.data;
       setAudioText(data);
@@ -282,7 +288,7 @@ const ComplaintDetails = () => {
           </CardContent>
         </Card>
       </div>
-      {ocrText?.File &&
+      {ocrText?.File && (
         <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
           <Card sx={{ flex: 1 }}>
             <CardContent>
@@ -294,11 +300,15 @@ const ComplaintDetails = () => {
                 <div>
                   {ocrText.File && ocrText.original_text_list ? (
                     ocrText.File.map((file, index) => {
-                      const ocrTextContent = ocrText.original_text_list[index] || "";  // Get corresponding text for the file
+                      const ocrTextContent =
+                        ocrText.original_text_list[index] || ""; // Get corresponding text for the file
                       return (
                         <div key={index}>
                           {/* File name display */}
-                          <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{ fontWeight: "bold" }}
+                          >
                             {file}
                           </Typography>
 
@@ -322,8 +332,8 @@ const ComplaintDetails = () => {
             </CardContent>
           </Card>
         </div>
-      }
-      {ocrText?.File &&
+      )}
+      {ocrText?.File && (
         <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
           <Card sx={{ flex: 1 }}>
             <CardContent>
@@ -335,12 +345,16 @@ const ComplaintDetails = () => {
                 <div>
                   {ocrText.File && ocrText.translated_text_list ? (
                     ocrText.File.map((file, index) => {
-                      const ocrTextContent = ocrText.translated_text_list[index] || "";  // Get corresponding text for the file
+                      const ocrTextContent =
+                        ocrText.translated_text_list[index] || ""; // Get corresponding text for the file
 
                       return (
                         <div key={index}>
                           {/* File name display */}
-                          <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{ fontWeight: "bold" }}
+                          >
                             {file}
                           </Typography>
 
@@ -364,9 +378,9 @@ const ComplaintDetails = () => {
             </CardContent>
           </Card>
         </div>
-      }
+      )}
 
-      {audioText?.File &&
+      {audioText?.File && (
         <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
           <Card sx={{ flex: 1 }}>
             <CardContent>
@@ -378,12 +392,16 @@ const ComplaintDetails = () => {
                 <div>
                   {audioText.File && audioText.original_text_list ? (
                     audioText.File.map((file, index) => {
-                      const audioTextContent = audioText.original_text_list[index] || "";  // Get corresponding text for the file
+                      const audioTextContent =
+                        audioText.original_text_list[index] || ""; // Get corresponding text for the file
 
                       return (
                         <div key={index}>
                           {/* File name display */}
-                          <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{ fontWeight: "bold" }}
+                          >
                             {file}
                           </Typography>
 
@@ -407,8 +425,8 @@ const ComplaintDetails = () => {
             </CardContent>
           </Card>
         </div>
-      }
-      {audioText?.File &&
+      )}
+      {audioText?.File && (
         <div style={{ display: "flex", gap: "20px", marginTop: "20px" }}>
           <Card sx={{ flex: 1 }}>
             <CardContent>
@@ -420,12 +438,16 @@ const ComplaintDetails = () => {
                 <div>
                   {audioText.File && audioText.translated_text_list ? (
                     audioText.File.map((file, index) => {
-                      const audioTextContent = audioText.translated_text_list[index] || "";  // Get corresponding text for the file
+                      const audioTextContent =
+                        audioText.translated_text_list[index] || ""; // Get corresponding text for the file
 
                       return (
                         <div key={index}>
                           {/* File name display */}
-                          <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                          <Typography
+                            variant="subtitle1"
+                            sx={{ fontWeight: "bold" }}
+                          >
                             {file}
                           </Typography>
 
@@ -449,7 +471,7 @@ const ComplaintDetails = () => {
             </CardContent>
           </Card>
         </div>
-      }
+      )}
     </div>
   );
 };
