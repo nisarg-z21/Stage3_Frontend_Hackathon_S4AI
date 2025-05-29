@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "../components/Chart";
 // import { mockData } from "../data/mockData";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useAxios from "../api/useAxios";
+import FileInputModal from "../components/FileInputModal";
 
 const months = [
   "January",
@@ -20,9 +21,11 @@ const months = [
 ];
 
 const KeywordGraphScreen = () => {
-  const [mockData, setMockData] = React.useState({});
+  const [mockData, setMockData] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const location = useLocation();
   const state = location.state;
+  const navigate = useNavigate();
 
   const { dataPath } = state;
 
@@ -55,6 +58,34 @@ const KeywordGraphScreen = () => {
   return (
     // <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <div className="p-6">
+      {/* Back Button */}
+      <div className="flex justify-end items-center mb-6 gap-4">
+        <button
+          // onClick={() => navigate(-1)}
+          onClick={() => setIsModalOpen(true)} // Open modal
+          className="mb-4 px-4 py-2 text-white rounded transition"
+          style={{
+            backgroundColor: "#0361ae",
+            hover: {
+              backgroundColor: "#035191",
+            },
+          }}
+        >
+          + Add Complaint Data
+        </button>
+        <button
+          onClick={() => navigate(-1)}
+          className="mb-4 px-4 py-2 text-white rounded transition"
+          style={{
+            backgroundColor: "#0361ae",
+            hover: {
+              backgroundColor: "#035191",
+            },
+          }}
+        >
+          ← Back
+        </button>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 animate-fadeIn">
         {Object.keys(mockData).map((month, index) => (
           <div key={month} className="bg-gray-50 rounded-lg p-6">
@@ -70,6 +101,14 @@ const KeywordGraphScreen = () => {
           </div>
         ))}
       </div>
+      <FileInputModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSubmit={() => {
+          setIsModalOpen(false);
+          fetchReportData(dataPath);
+        }}
+      />
     </div>
     // </div>
   );

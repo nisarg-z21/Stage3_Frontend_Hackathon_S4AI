@@ -30,7 +30,7 @@ const Header = () => {
 
   return (
     <AppBar
-      position="static"
+      position="fixed"
       sx={{ backgroundColor: "#0361ae", color: "white" }}
     >
       {/* Top Toolbar - Government & Cyber Crime Logos */}

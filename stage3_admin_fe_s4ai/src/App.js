@@ -25,7 +25,7 @@ function App() {
       <Router>
         <Box sx={{ display: "flex", flexDirection: "column", height: "100vh" }}>
           <LoginHeader />
-          <Box sx={{ display: "flex", flexGrow: 1 }}>
+          <Box sx={{ display: "flex", flexGrow: 1, marginTop: "145px" }}>
             <Sidebar />
             <Box sx={{ flexGrow: 1, overflow: "auto", padding: "20px" }}>
               <Routes>
@@ -35,8 +35,14 @@ function App() {
                 <Route path="/complains" element={<Complains />} />
                 <Route path="/reports" element={<Report />} />
                 <Route path="/logs" element={<Logs />} />
-                <Route path="/keywordGraphScreen" element={<KeywordGraphScreen />} />
-                <Route path="/keywordDetailScreen" element={<KeywordDetailScreen />} />
+                <Route
+                  path="/keywordGraphScreen"
+                  element={<KeywordGraphScreen />}
+                />
+                <Route
+                  path="/keywordDetailScreen"
+                  element={<KeywordDetailScreen />}
+                />
                 <Route
                   path="/complains/complainScreen/:complaintId"
                   element={<ComplaintDetails />}
